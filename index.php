@@ -4,16 +4,13 @@
 																	                    
 	<?php if ( have_posts() ) : 
 		
-		$paged = get_query_var( 'paged' ) ?: 1;
-		$total_post_count = wp_count_posts();
-		$published_post_count = $total_post_count->publish;
-		$total_pages = ceil( $published_post_count / $posts_per_page );
+		$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 		
 		if ( 1 < $paged ) : ?>
 		
 			<div class="page-title">
 			
-				<h4><?php printf( __( 'Page %s of %s', 'wilson' ), $paged, $wp_query->max_num_pages ); ?></h4>
+				<h4><?php printf( __( 'Page %1$s of %2$s', 'wilson' ), $paged, $wp_query->max_num_pages ); ?></h4>
 				
 			</div>
 						

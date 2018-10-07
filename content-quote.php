@@ -14,13 +14,13 @@
 									
 	</div><!-- .post-meta -->
 	
-		<div class="post-content">
+	<div class="post-content">
 
-			<?php the_content(); ?>
-			
-			<?php wp_link_pages(); ?>
-			
-		</div><!-- .post-content -->
+		<?php the_content(); ?>
+		
+		<?php wp_link_pages(); ?>
+		
+	</div><!-- .post-content -->
 	            
 	<div class="clear"></div>
 

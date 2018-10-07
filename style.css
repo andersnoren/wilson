@@ -2,8 +2,8 @@
 
 	Theme Name: Wilson
     Text Domain: wilson
-	Version: 1.30
-	Description: Wilson is a clean, simple and responsive theme for personal sites and blogs. Features responsive design, retina-ready assets, custom accent color support, custom logo support, custom widgets for video and Flickr embeds, page templates, editor styles and translation-ready code. Demo: http://www.andersnoren.se/themes/wilson/
+	Version: 1.32
+	Description: Wilson is a clean, simple and responsive theme for personal sites and blogs. Features responsive design, retina-ready assets, Gutenberg support, custom accent color support, custom logo support, custom widgets for video and Flickr embeds, page templates, editor styles and translation-ready code. Demo: http://www.andersnoren.se/themes/wilson/
 	Tags: blog, two-columns, left-sidebar, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -975,6 +975,10 @@ code, kbd, pre {
 /* Post media --------------------------------------- */
 
 
+figure {
+	margin: 0;
+}
+
 .wp-caption,
 .post-content img {
 	max-width: 100%;
@@ -983,6 +987,8 @@ code, kbd, pre {
 .wp-caption a,
 .wp-caption img { display: block; }
 
+.wp-caption img,
+.wp-block-image img,
 img.alignleft,
 .alignleft img,
 img.aligncenter,
@@ -997,7 +1003,7 @@ img.alignright,
 .post-content .alignleft,
 .post-content .alignright {
 	margin-bottom: 1.2em;
-	max-width: 40%;
+	max-width: 50%;
 }
 
 .post-content .wp-caption .alignleft,
@@ -1016,12 +1022,9 @@ img.alignright,
 }
 
 .post-content .aligncenter {
-	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
-
-.post-content .alignnone { display: inline-block; }
 
 .post-content .wp-caption-text,
 .post-content .gallery-caption {
@@ -1045,6 +1048,21 @@ img.alignright,
 .post-content .gallery a { display: block; padding: 10px; }
 
 .post-content .gallery .gallery-item { margin: 0 !important; }
+
+
+/* GUTENBERG CLASSES */
+
+.post-content .alignfull {
+	margin: 2.5em 0;
+	margin-left: calc( ( 1160px * .68 ) * -0.08 );
+	max-width: calc( 1160px * .68 );
+	width: calc( 1160px * .68 );
+}
+
+.post-content .alignfull img {
+	border: none;
+	padding: 0;
+}
 
 
 /* Tables --------------------------------------- */
@@ -1139,11 +1157,7 @@ img.alignright,
 	border: 1px solid #eee;
 	background: #FDFDFD;
 	border-radius: 4px;
-        -webkit-transition: background 0.2s ease-in-out;
-        -moz-transition:    background 0.2s ease-in-out;
-        -ms-transition:     background 0.2s ease-in-out;
-        -o-transition:      background 0.2s ease-in-out;
-	transition:             background 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 	-webkit-appearance: none;
 }
 
@@ -1196,6 +1210,157 @@ img.alignright,
 .post-content input[type="submit"]:focus,
 .post-content input[type="submit"]:active {
 	outline: none;
+}
+
+
+/* Gutenberg Accent Colors --------------------------------------- */
+
+.post-content .has-background { background-color: #272F38; }
+
+.post-content .has-accent-color { color: #FF706C; }
+.post-content .has-accent-background-color { background-color: #FF706C; }
+
+.post-content .has-black-color { color: #272F38; }
+.post-content .has-black-background-color { background-color: #272F38; }
+
+.post-content .has-dark-gray-color { color: #444; }
+.post-content .has-dark-gray-background-color { background-color: #444; }
+
+.post-content .has-medium-gray-color { color: #666; }
+.post-content .has-medium-gray-background-color { background-color: #666; }
+
+.post-content .has-light-gray-color { color: #888; }
+.post-content .has-light-gray-background-color { background-color: #888; }
+
+.post-content .has-white-color { color: #fff; }
+.post-content .has-white-background-color { background-color: #fff; }
+
+
+/* Gutenberg Font Sizes --------------------------------------- */
+
+.post-content .has-small-font-size { font-size: .842em; }
+.post-content .has-regular-font-size { font-size: 1em; }
+
+.post-content .has-large-font-size,
+.post-content .has-larger-font-size {
+	line-height: 1.45;
+}
+
+.post-content .has-large-font-size { font-size: 1.333em; }
+.post-content .has-larger-font-size { font-size: 1.777em; }
+
+
+/* Block: Button --------------------------------------- */
+
+.post-content .wp-block-file__button,
+.post-content .wp-block-button__link {
+	border-radius: 4px;
+	font-weight: 500;
+	padding: .8em 1.4em;
+}
+
+.post-content .wp-block-file a {
+	color: inherit;
+}
+
+.post-content a.wp-block-file__button {
+	color: #fff;
+}
+
+.post-content .wp-block-file__button:hover,
+.post-content .wp-block-button__link:hover {
+	opacity: .85;
+	text-decoration: none;
+}
+
+
+/* Block: Quote --------------------------------------- */
+
+.post-content blockquote,
+.post-content .wp-block-quote.is-large, 
+.post-content .wp-block-quote.is-style-large {
+	margin-bottom: 1.25em;
+	padding: 1em;
+}
+
+.post-content blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-quote.is-large p, 
+.wp-block-quote.is-style-large p {
+	font-size: 1.33em;
+	font-style: inherit;
+	line-height: 1.5;
+}
+
+.wp-block-quote.is-large cite, 
+.wp-block-quote.is-style-large cite {
+	font-size: 0.8em;
+}
+
+
+/* Block: Gallery --------------------------------------- */
+
+.wp-block-gallery .blocks-gallery-image figcaption, 
+.wp-block-gallery .blocks-gallery-item figcaption {
+	margin: 0;
+	padding-bottom: 10px;
+}
+
+.post-content .wp-block-gallery.alignfull {
+	padding: 0 8px;
+}
+
+.post-content ul.wp-block-gallery:not(.alignfull) {
+	margin-left: 0;
+}
+
+
+/* Block: Cover Image --------------------------------------- */
+
+.wp-block-cover-image.alignfull {
+	min-height: 75vh;
+}
+
+.wp-block-cover-image p {
+	font-weight: 400;
+}
+
+
+/* Block: Column --------------------------------------- */
+
+.wp-block-column {
+	padding: 0 5px;
+}
+
+
+/* Block: Audio --------------------------------------- */
+
+.wp-block-audio audio {
+	width: 100%;
+}
+
+
+/* Block: File --------------------------------------- */
+
+.post-content .wp-block-file {
+	align-items: center;
+	background: #E6E9EC;
+	border-radius: 4px;
+	display: flex;
+	justify-content: space-between;
+	margin: 30px 0;
+	padding: 15px 20px;
+}
+
+.post-content .wp-block-file a:not(.wp-block-file__button) {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.post-content .wp-block-file__button {
+	flex-shrink: 0;
 }
 
 
@@ -1423,10 +1588,15 @@ p.logged-in-as {
 	color: #666;
 }
 
-#respond form label,
-.comment-form .required { display: none; }
+.comment-form label {
+	display: block;
+	margin: 0 0 8px 0;
+}
 
-.comment-form input { max-width: 75%; }
+.comment-form input[type="checkbox"] + label {
+	display: inline;
+	margin: 0 0 0 5px;
+}
 
 .comment-form input[type="text"],
 .comment-form input[type="email"],
@@ -1445,6 +1615,11 @@ p.logged-in-as {
 	font-family: 'Lato', 'Helvetica Neue', sans-serif;
 }
 
+.comment-form input[type="text"],
+.comment-form input[type="email"] {
+	max-width: 497px;
+}
+
 .comment-form textarea { line-height: 160%; height: 250px; }
 
 .comment-form input[type="text"]:focus,
@@ -1454,11 +1629,6 @@ p.logged-in-as {
 	outline: none;
 	background-color: #EEE;
 	color: #444;
-}
-
-.comment-form input {
-	width: 75%;
-	margin-bottom: 1em;
 }
 
 .comment-form input[type="submit"] {
@@ -1743,6 +1913,21 @@ img#wpstats { display: none; }
 /* -------------------------------------------------------------------------------- */
 
 
+@media ( max-width: 1350px ) {
+
+
+	/* Post Content --------------------------------------- */
+
+	.post-content .alignfull {
+		margin-left: calc( ( 86vw * .68 ) * -0.08 );
+		max-width: calc( 86vw * .68 );
+		width: calc( 86vw * .68 );
+	}
+
+
+}
+
+
 @media (max-width: 1100px) {
 
 	/* Structure --------------------------------------- */
@@ -1753,6 +1938,14 @@ img#wpstats { display: none; }
 	
 	.blog-menu { 
 		border-radius: 0; 
+	}
+
+	/* Post Content --------------------------------------- */
+
+	.post-content .alignfull {
+		margin-left: calc( ( 100vw * .68 ) * -0.08 );
+		max-width: calc( 100vw * .68 );
+		width: calc( 100vw * .68 );
 	}
 	
 }
@@ -1910,6 +2103,14 @@ img#wpstats { display: none; }
 	.featured-media { margin: 0; }
 	
 	.featured-media img { border-radius: 0; }
+
+	/* Post Content --------------------------------------- */
+
+	.post-content .alignfull {
+		margin-left: calc( 100vw * -0.08 );
+		max-width: 100vw;
+		width: 100vw;
+	}
 	
 	/* Credits --------------------------------------- */
 	

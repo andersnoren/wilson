@@ -1,7 +1,5 @@
 /*---------------------------------------------------------------------------------
-
 	Editor styles for Wilson
-
 ---------------------------------------------------------------------------------*/
 
 
@@ -18,8 +16,8 @@ body#tinymce.wp-editor {
 }
 
 body#tinymce.wp-editor * { 
-	box-sizing: border-box; 
 	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
 }
 
 body#tinymce.wp-editor p { line-height: 150%; }

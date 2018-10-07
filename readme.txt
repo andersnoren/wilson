@@ -33,6 +33,20 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.32 (2018-10-07)
+-------------------------
+- Updated with Gutenberg support
+	- Gutenberg editor styles
+	- Styling of Gutenberg blocks
+	- Custom Wilson Gutenberg palette
+	- Custom Wilson Gutenberg typography styles
+- Added option to disable Google Fonts with a translateable string
+- Improved compatibility with < PHP 5.5
+
+Version 1.31 (2018-05-24)
+-------------------------
+- Fixed output of cookie checkbox in comments
+
 Version 1.30 (2017-12-03)
 -------------------------
 - The pluggable update: made all functions in functions.php pluggable
