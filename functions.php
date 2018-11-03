@@ -597,6 +597,10 @@ if ( ! function_exists( 'wilson_add_gutenberg_features' ) ) :
 
 	function wilson_add_gutenberg_features() {
 
+		/* Gutenberg Features --------------------------------------- */
+
+		add_theme_support( 'align-wide' );
+
 		/* Gutenberg Palette --------------------------------------- */
 
 		$accent_color = get_theme_mod( 'accent_color' ) ? get_theme_mod( 'accent_color' ) : '#FF706C';

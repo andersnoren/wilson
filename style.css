@@ -2,7 +2,7 @@
 
 	Theme Name: Wilson
     Text Domain: wilson
-	Version: 1.32
+	Version: 1.33
 	Description: Wilson is a clean, simple and responsive theme for personal sites and blogs. Features responsive design, retina-ready assets, Gutenberg support, custom accent color support, custom logo support, custom widgets for video and Flickr embeds, page templates, editor styles and translation-ready code. Demo: http://www.andersnoren.se/themes/wilson/
 	Tags: blog, two-columns, left-sidebar, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -934,11 +934,6 @@ code, kbd, pre {
 	margin-top: 0.5em;
 }
 
-.post-content ol > li:last-child,
-.post-content ul > li:last-child {
-	margin-bottom: 0;
-}
-
 .post-content address {
 	padding: 3% 3.5%;
 	background: #F1F1F1;
@@ -1054,9 +1049,9 @@ img.alignright,
 
 .post-content .alignfull {
 	margin: 2.5em 0;
-	margin-left: calc( ( 1160px * .68 ) * -0.08 );
-	max-width: calc( 1160px * .68 );
-	width: calc( 1160px * .68 );
+	margin-left: calc( ( 800px * .84 ) * -0.08 );
+	max-width: calc( 800px * .84 );
+	width: calc( 800px * .84 );
 }
 
 .post-content .alignfull img {
@@ -1314,6 +1309,11 @@ img.alignright,
 
 .post-content ul.wp-block-gallery:not(.alignfull) {
 	margin-left: 0;
+}
+
+.post-content .wp-block-gallery .blocks-gallery-image, 
+.post-content .wp-block-gallery .blocks-gallery-item {
+	margin-bottom: 16px;
 }
 
 

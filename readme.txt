@@ -33,6 +33,14 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.33 (2018-10-20)
+-------------------------
+- Fixed incorrect dates in the archive template
+- Fixed potential issue with tags in title attribute in footer
+- Fixed Gutenberg gallery items being misaligned
+- Added Gutenberg support for alignwide, so alignfull can be used
+- Removed the languages folder, since WordPress.org handles that stuff nowadays
+
 Version 1.32 (2018-10-07)
 -------------------------
 - Updated with Gutenberg support

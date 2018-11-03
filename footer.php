@@ -36,7 +36,7 @@
 		
 			<div class="credits-inner">
 			
-				<p class="credits-left">&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="credits-left">&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo home_url(); ?>" title="<?php echo wp_strip_all_tags( get_bloginfo( 'name' ) ); ?>"><?php bloginfo( 'name' ); ?></a></p>
 				
 				<p class="credits-right"><span><?php printf( __( 'Theme by %s', 'wilson'), '<a href="http://www.andersnoren.se">Anders Nor&eacute;n</a>' ); ?></span> &mdash; <a title="<?php _e( 'To the top', 'wilson' ); ?>" class="tothetop"><?php _e( 'Up', 'wilson' ); ?> &uarr;</a></p>
 				

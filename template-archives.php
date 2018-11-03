@@ -43,7 +43,7 @@ Template Name: Archive template
                                     <li>
                                         <a href="<?php echo get_permalink( $post->ID ); ?>" title="<?php the_title_attribute( array( 'post' => $post->ID ) ); ?>">
                                             <?php echo get_the_title( $post->ID );?> 
-                                            <span>(<?php the_time( get_option( 'date_format' ), $post->ID ); ?>)</span>
+                                            <span>(<?php echo get_the_time( get_option( 'date_format' ), $post->ID ); ?>)</span>
                                         </a>
                                     </li>
                                     
