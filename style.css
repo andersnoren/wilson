@@ -2,7 +2,7 @@
 
 	Theme Name: Wilson
     Text Domain: wilson
-	Version: 1.33
+	Version: 1.35
 	Description: Wilson is a clean, simple and responsive theme for personal sites and blogs. Features responsive design, retina-ready assets, Gutenberg support, custom accent color support, custom logo support, custom widgets for video and Flickr embeds, page templates, editor styles and translation-ready code. Demo: http://www.andersnoren.se/themes/wilson/
 	Tags: blog, two-columns, left-sidebar, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -1049,9 +1049,9 @@ img.alignright,
 
 .post-content .alignfull {
 	margin: 2.5em 0;
-	margin-left: calc( ( 800px * .84 ) * -0.08 );
-	max-width: calc( 800px * .84 );
-	width: calc( 800px * .84 );
+	margin-left: calc( 789px * -0.08 );
+	max-width: 789px;
+	width: 789px;
 }
 
 .post-content .alignfull img {
