@@ -10,20 +10,16 @@
 	font-size: 18px;
 }
 
-.editor-rich-text__tinymce {
+:root .editor-styles-wrapper {
 	color: #555;
+}
+
+.editor-styles-wrapper > * {
 	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
-	-webkit-font-smoothing: antialiased;
 }
 
-.editor-rich-text__tinymce * {
-	font-family: inherit !important;
-}
-
-.editor-styles-wrapper .editor-default-block-appender, 
-.editor-styles-wrapper .editor-block-list__block,
-.editor-styles-wrapper .editor-post-title__block {
-    max-width: 663px;
+.wp-block {
+	max-width: 663px;
 }
 
 .editor-styles-wrapper .editor-block-list__block[data-align="full"] {
@@ -235,22 +231,18 @@ table.wp-block-table thead + tbody {
 
 
 hr.wp-block-separator {
-	border: none !important;
 	color: #888;
 	margin: 2em auto;
 }
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-	background: #eee;
-	height: 2px;
+	border-bottom-width: 4px;
 	max-width: none;
-	width: 50%;	
+	width: min( 331px, 50% );	
 }
 
 .wp-block-separator.is-style-wide {
-	background: #eee;
-	height: 2px;
-	width: 100%;
+	border-bottom-width: 4px;
 }
 
 .wp-block-separator.is-style-dots:before {
@@ -305,6 +297,10 @@ blockquote {
 	padding: 1em;
 }
 
+.wp-block-pullquote:not(.is-style-solid-color) {
+	padding: 0;
+}
+
 .wp-block-quote:not(.is-large):not(.is-style-large) {
 	border: none;
 	padding: 1.1em;
@@ -337,10 +333,10 @@ cite,
 .wp-block-quote.is-style-large footer {
 	color: #666;
 	font-family: 'Raleway', 'Helvetica Neue', sans-serif !important;
-	font-size: 0.8em;
+	font-size: 16px;
 	font-style: normal;
 	font-weight: 700;
-	letter-spacing: 1px;
+	letter-spacing: .01em;
 	line-height: 140%;
 	margin-top: 1em;
 	text-transform: uppercase;
@@ -363,6 +359,10 @@ cite:before { content: "— "; }
 .wp-block-pullquote {
 	border: none;
 	text-align: left;
+}
+
+:root .wp-block-pullquote.is-style-solid-color blockquote {
+	max-width: 100%;
 }
 
 

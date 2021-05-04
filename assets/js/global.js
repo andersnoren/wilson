@@ -1,24 +1,16 @@
-// License: GNU General Public License version 2.0
-// License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
 jQuery(document).ready(function($) {
 
 	// Toggle mobile-menu
 	$(".nav-toggle").on("click", function(){	
 		$(this).toggleClass("active");
 		$(".mobile-menu").slideToggle();
-		if ($(".search-toggle").hasClass("active")) {
-			$(".search-toggle").removeClass("active");
-			$(".blog-search").slideToggle();
-		}
 	});
 		
-	// Show mobile-menu > 700
+	// Show mobile-menu > 800
 	$(window).resize(function() {
 		if ($(window).width() > 800) {
 			$(".toggle").removeClass("active");
 			$(".mobile-menu").hide();
-			$(".blog-search").hide();
 		}
 	});
 	

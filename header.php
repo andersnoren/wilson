@@ -2,13 +2,15 @@
 
 <html <?php language_attributes(); ?>>
 
-	<head profile="http://gmpg.org/xfn/11">
-		
-		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-		 
+	<head>
+
+		<meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ); ?>" charset="<?php bloginfo( 'charset' ); ?>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+
 		<?php wp_head(); ?>
-	
+
 	</head>
 	
 	<body <?php body_class(); ?>>
@@ -18,27 +20,58 @@
 			wp_body_open(); 
 		}
 		?>
+
+		<a class="skip-link button" href="#site-content"><?php esc_html_e( 'Skip to the content', 'wilson' ); ?></a>
 	
 		<div class="wrapper">
 	
-			<div class="sidebar">
+			<header class="sidebar" id="site-header">
 							
 				<div class="blog-header">
-				
-					<?php if ( get_theme_mod( 'wilson_logo' ) ) : ?>
+
+					<?php 
+
+					$custom_logo_id 	= get_theme_mod( 'custom_logo' );
+					$legacy_logo_url 	= get_theme_mod( 'wilson_logo' );
+
+					$blog_title 		= get_bloginfo( 'title' );
+					$blog_description 	= get_bloginfo( 'description' );
+
+					$blog_title_elem 	= ( ( is_front_page() || is_home() ) && ! is_page() ) ? 'h1' : 'div';
 					
-						<a class="blog-logo" href='<?php echo home_url(); ?>' title='<?php bloginfo( 'name' ); ?> &mdash; <?php bloginfo( 'description' ); ?>' rel='home'>
-				        	<img src="<?php echo esc_url( get_theme_mod( 'wilson_logo' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>">
-				        </a>
+					if ( $custom_logo_id || $legacy_logo_url ) : 
+
+						$custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_id, 'full' ) : $legacy_logo_url;
 					
-					<?php else : ?>
-				
-						<h1 class="blog-title">
-							<a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?> &mdash; <?php bloginfo( 'description' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-						</h1>
+						?>
+					
+						<<?php echo $blog_title_elem; ?> class="blog-logo">
 						
-						<h3 class="blog-description"><?php bloginfo( 'description' ); ?></h3>
-					
+							<a href="<?php echo esc_url( home_url( "/" ) ); ?>" rel="home">
+								<img src="<?php echo esc_url( $custom_logo_url ); ?>">
+								<?php if ( $blog_title ) : ?>
+									<span class="screen-reader-text"><?php echo $blog_title; ?></span>
+								<?php endif; ?>
+							</a>
+							
+						</<?php echo $blog_title_elem; ?>><!-- .blog-logo -->
+				
+					<?php elseif ( $blog_title || $blog_description ) : ?>
+				
+						<div class="blog-info">
+						
+							<?php if ( $blog_title ) : ?>
+								<<?php echo $blog_title_elem; ?> class="blog-title">
+									<a href="<?php echo esc_url( home_url() ); ?>" rel="home"><?php echo $blog_title; ?></a>
+								</<?php echo $blog_title_elem; ?>>
+							<?php endif; ?>
+							
+							<?php if ( $blog_description ) : ?>
+								<p class="blog-description"><?php echo $blog_description; ?></p>
+							<?php endif; ?>
+						
+						</div><!-- .blog-info -->
+						
 					<?php endif; ?>
 
 				</div><!-- .blog-header -->
@@ -66,15 +99,16 @@
 			
 					<ul class="navigation">
 					
-						<?php if ( has_nav_menu( 'primary' ) ) {
+						<?php 
+						
+						if ( has_nav_menu( 'primary' ) ) {
 
 							$menu_args = array( 
-								'container'      => '', 
+								'container'      => '',
 								'items_wrap'     => '%3$s',
 								'theme_location' => 'primary', 
-								'walker'         => new wilson_nav_walker					
 							);
-																			
+
 							wp_nav_menu( $menu_args ); 
                             
                         } else {
@@ -83,32 +117,29 @@
 								'container' => '',
 								'title_li'  => ''
 							);
-						
+
 							wp_list_pages( $list_pages_args );
 							
-						} ?>
+						}
+
+						?>
 												
-					 </ul><!-- .navigation -->
-					 
-					 <div class="clear"></div>
-					 
+					</ul><!-- .navigation -->
 				</div><!-- .blog-menu -->
 				
 				<div class="mobile-menu">
 						 
-					 <ul class="navigation">
+					<ul class="navigation">
 					
-						<?php if ( has_nav_menu( 'primary' ) ) {
-																			
+						<?php
+						if ( has_nav_menu( 'primary' ) ) {
                             wp_nav_menu( $menu_args ); 
-
                         } else {
-
                             wp_list_pages( $list_pages_args );
-							
-						} ?>
+						}
+						?>
 						
-					 </ul>
+					</ul>
 					 
 				</div><!-- .mobile-menu -->
 				
@@ -122,4 +153,6 @@
 					
 				<?php endif; ?>
 									
-			</div><!-- .sidebar -->
+			</header><!-- .sidebar -->
+
+			<main class="content" id="site-content">

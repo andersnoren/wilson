@@ -1,8 +1,8 @@
 === Wilson ===
 Contributors: Anlino
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Requires at least: 4.4
-Tested up to: 5.0
+Requires at least: 4.5
+Tested up to: 5.7.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -18,6 +18,10 @@ All theme specific options are handled through the WordPress Customizer.
 
 == Licenses ==
 
+Feather Icons
+License: MIT License, https://opensource.org/licenses/MIT
+Source: https://feathericons.com
+
 Lato
 License: SIL Open Font License, 1.1 
 Source: https://fonts.google.com/specimen/Lato
@@ -32,6 +36,56 @@ Source: http://www.unsplash.com
 
 
 == Changelog ==
+
+Version 2.0.0 (2021-05-04)
+-------------------------
+- Added "block-styles" to the theme tags in `style.css`.
+- Deleted license.txt from the theme files.
+- Added the new `/assets/` sub folder, and moved the `/js/` and `/images/` folders into it.
+- Renamed the editor style CSS files, and moved them to the new `/assets/css/` folder.
+- Created a separate file for the Hemingway_Customize class in `/inc/classes/`.
+- Moved the `/widgets/` folder to the new `/inc/` folder.
+- Removed the unused `wilson_options` Customizer section.
+- Removed the Flickr widget, since the API it relied on for data is being removed.
+- Updated the theme description to reflect the removal of the Flickr widget.
+- Made the main menu name translateable.
+- Added the theme version to all enqueues.
+- Added support for the core custom_logo setting, and updated the old wilson_logo setting to only be displayed if you already have a wilson_logo image set.
+- Bumped the "Requires at least" tag to 4.5.0, since Wilson is now using custom_logo.
+- Added "Tested up to" and "Requires PHP" to readme.txt.
+- Updated widget area registration to include widget IDs in output.
+- Cleaned up functions.php, added missing function_exists() checks.
+- Removed the `wilson_nav_walker` navigation walker class, since it wasn't needed.
+- Reworked CSS reset.
+- Moved the post content element styles to the Element Base CSS section, made them apply globally, and updated other styles to reflect the new base styles.
+- Split remaining post content styles into the Entry Content and Blocks CSS sections.
+- Removed the default padding and border from images.
+- Moved pagination to pagination.php, improved conditionals, better handling of overflow.
+- Added a skip link.
+- Restructured the header, content and footer to use semantic HTML5 elements.
+- Moved the credits into the footer element.
+- Removed all output of title attributes.
+- Unified index.php, archive.php and search.php into index.php.
+- Unified image.php, single.php and page.php into singular.php (and removed some image.php specific functionality).
+- Unified content.php, content-aside.php, content-quote.php and content-video.php into content.php.
+- Removed the "Comments are closed" message.
+- Replaced the "post-image" image size by setting the post thumbnail size to the same dimensions.
+- Replaced clearing divs with classes, flexed containers.
+- Removed searchform.php, updated styles to work with default form markup, replaced psudeo element icon with icon from Feather Icons, added licensing information for Feather Icons.
+- Updated template-archives.php to use singular.php, moved template specific markup to inc/template-archives-content.php, and added a function that appends that markup to the_content when the template is in use.
+- Updated screenshot resolution to 1200x900, and changed file format to JPG reducing theme footprint by 300 kilobytes.
+- Removed hooks for body_class and post_class, since the custom classes are no longer needed.
+- Increased color contrast for some elements. 
+- Added the wide-blocks tag to style.css.
+- Fixed unescaped home_url() in footer.php.
+- Fixed excessive top margins of buttons in the Buttons block.
+- Fixed nested list styles in widgets.
+- Improvements to pullquote styles.
+- Adjusted block button styles.
+- Removed global striped table styles, since it's available as an option for the table block.
+- Changed the wrapper to use flex, removing the need for old background image solution.
+- Block editor styles: Updated the block width and font families to match the front-end.
+- Separator block: Fixed width of style: wide.
 
 Version 1.36 (2019-04-07)
 -------------------------
