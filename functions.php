@@ -75,17 +75,8 @@ if ( ! function_exists( 'wilson_load_style' ) ) :
 		$theme_version 	= wp_get_theme( 'wilson' )->get( 'Version' );
 		$dependencies 	= array();
 
-		/**
-		 * Translators: If there are characters in your language that are not
-		 * supported by the theme fonts, translate this to 'off'. Do not translate
-		 * into your own language.
-		 */
-		$google_fonts = _x( 'on', 'Google Fonts: on or off', 'wilson' );
-
-		if ( 'off' !== $google_fonts ) {
-			wp_register_style( 'wilson_fonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:400,700', false, 1.0, 'all' );
-			$dependencies[] = 'wilson_fonts';
-		}
+		wp_register_style( 'wilson_fonts', get_stylesheet_directory_uri() . '/assets/css/fonts.css' );
+		$dependencies[] = 'wilson_fonts';
 
 		wp_enqueue_style( 'wilson_style', get_stylesheet_uri(), $dependencies, $theme_version, 'all' );
 
@@ -102,19 +93,7 @@ endif;
 if ( ! function_exists( 'wilson_add_editor_styles' ) ) :
 	function wilson_add_editor_styles() {
 
-		add_editor_style( 'assets/css/classic-editor-styles.css' );
-
-		/**
-		 * Translators: If there are characters in your language that are not
-		 * supported by the theme fonts, translate this to 'off'. Do not translate
-		 * into your own language.
-		 */
-		$google_fonts = _x( 'on', 'Google Fonts: on or off', 'wilson' );
-
-		if ( 'off' !== $google_fonts ) {
-			$font_url = '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:400,700';
-			add_editor_style( str_replace( ',', '%2C', $font_url ) );
-		}
+		add_editor_style( array( 'assets/css/classic-editor-styles.css', 'assets/css/fonts.css' ) );
 		
 	}
 	add_action( 'init', 'wilson_add_editor_styles' );
@@ -508,21 +487,9 @@ if ( ! function_exists( 'wilson_block_editor_styles' ) ) :
 	function wilson_block_editor_styles() {
 
 		$theme_version 	= wp_get_theme( 'wilson' )->get( 'Version' );
-		$dependencies 	= array();
 
-		/**
-		 * Translators: If there are characters in your language that are not
-		 * supported by the theme fonts, translate this to 'off'. Do not translate
-		 * into your own language.
-		 */
-		$google_fonts = _x( 'on', 'Google Fonts: on or off', 'wilson' );
-
-		if ( 'off' !== $google_fonts ) {
-			wp_register_style( 'wilson-block-editor-styles-font', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:400,700', false, 1.0, 'all' );
-			$dependencies[] = 'wilson-block-editor-styles-font';
-		}
-
-		wp_enqueue_style( 'wilson-block-editor-styles', get_theme_file_uri( '/assets/css/block-editor-styles.css' ), $dependencies, $theme_version, 'all' );
+		wp_register_style( 'wilson-block-editor-styles-font', get_stylesheet_directory_uri() . '/assets/css/fonts.css' );
+		wp_enqueue_style( 'wilson-block-editor-styles', get_theme_file_uri( '/assets/css/block-editor-styles.css' ), array( 'wilson-block-editor-styles-font' ), $theme_version, 'all' );
 
 	}
 	add_action( 'enqueue_block_editor_assets', 'wilson_block_editor_styles', 1 );
