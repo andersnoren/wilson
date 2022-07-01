@@ -75,7 +75,7 @@ if ( ! function_exists( 'wilson_load_style' ) ) :
 		$theme_version 	= wp_get_theme( 'wilson' )->get( 'Version' );
 		$dependencies 	= array();
 
-		wp_register_style( 'wilson_fonts', get_stylesheet_directory_uri() . '/assets/css/fonts.css' );
+		wp_register_style( 'wilson_fonts', get_theme_file_uri( '/assets/css/fonts.css' ) );
 		$dependencies[] = 'wilson_fonts';
 
 		wp_enqueue_style( 'wilson_style', get_stylesheet_uri(), $dependencies, $theme_version, 'all' );
@@ -488,7 +488,7 @@ if ( ! function_exists( 'wilson_block_editor_styles' ) ) :
 
 		$theme_version 	= wp_get_theme( 'wilson' )->get( 'Version' );
 
-		wp_register_style( 'wilson-block-editor-styles-font', get_stylesheet_directory_uri() . '/assets/css/fonts.css' );
+		wp_register_style( 'wilson-block-editor-styles-font', get_theme_file_uri( '/assets/css/fonts.css' ) );
 		wp_enqueue_style( 'wilson-block-editor-styles', get_theme_file_uri( '/assets/css/block-editor-styles.css' ), array( 'wilson-block-editor-styles-font' ), $theme_version, 'all' );
 
 	}
