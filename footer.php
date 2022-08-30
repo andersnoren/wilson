@@ -30,9 +30,9 @@
 		
 		</footer><!-- #site-footer -->
 		
-	</div><!-- .wrapper -->
-
-</main><!-- #site-content -->
+	</main><!-- #site-content -->
+	
+</div><!-- .wrapper -->
 
 <?php wp_footer(); ?>
 

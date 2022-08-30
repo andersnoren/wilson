@@ -37,6 +37,11 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 2.1.2 (2022-08-30)
+-------------------------
+- Fixed incorrect order of element closing tags in footer.php (thanks, milchbaum).
+- Adjusted the header.php meta tags to match default themes.
+
 Version 2.1.1 (2022-07-01)
 -------------------------
 - Improved fonts.css enqueue for child themes.
