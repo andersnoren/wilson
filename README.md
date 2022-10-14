@@ -2,7 +2,7 @@
 
 Wilson is a clean, simple and responsive theme for personal sites and blogs. Features responsive design, retina-ready assets, Block Editor support, custom accent color support, custom logo support, page templates, and editor styles.
 
-![Wilson](https://github.com/andersnoren/wilson/blob/main/screenshot.jpg)
+![Wilson](https://github.com/andersnoren/wilson/blob/master/screenshot.jpg)
 
 You can download the latest stable release of Wilson [from WordPress.org](https://wordpress.org/themes/wilson/).
 
