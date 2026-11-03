@@ -76,24 +76,20 @@
 
 				</div><!-- .blog-header -->
 				
-				<div class="nav-toggle toggle">
+				<button type="button" class="nav-toggle toggle" aria-expanded="false">
 				
-					<p>
+					<span class="nav-toggle-text">
 						<span class="show"><?php _e( 'Show menu', 'wilson' ); ?></span>
 						<span class="hide"><?php _e( 'Hide menu', 'wilson' ); ?></span>
-					</p>
+					</span>
 				
-					<div class="bars">
-							
-						<div class="bar"></div>
-						<div class="bar"></div>
-						<div class="bar"></div>
-						
-						<div class="clear"></div>
-						
-					</div><!-- .bars -->
+					<span class="bars" aria-hidden="true">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</span><!-- .bars -->
 				
-				</div><!-- .nav-toggle -->
+				</button><!-- .nav-toggle -->
 				
 				<div class="blog-menu">
 			

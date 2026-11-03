@@ -2,15 +2,16 @@
 
 	Theme Name: Wilson
     Text Domain: wilson
-	Version: 2.1.3
-	Description: Wilson is a clean, simple and responsive theme for personal sites and blogs. Features responsive design, retina-ready assets, Block Editor support, custom accent color support, custom logo support, page templates, and editor styles. Demo: https://andersnoren.se/themes/wilson/
+	Version: 2.1.4
+	Description: Wilson is a clean, simple and responsive theme for personal sites and blogs. Features responsive design, retina-ready assets, Block Editor support, custom accent color support, custom logo support, page templates, and editor styles. Demo: https://wilson.andersnoren.se
 	Tags: blog, two-columns, left-sidebar, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
 	Author: Anders Norén
 	Author URI: https://andersnoren.se
 	Theme URI: https://andersnoren.se/teman/wilson-wordpress-theme/
 	License: GNU General Public License version 2.0
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Tested up to: 6.1
+	Requires at least: 4.5
+	Tested up to: 7.1
 	Requires PHP: 5.6
 
 -----------------------------------------------------------------------------------
@@ -785,18 +786,23 @@ input[type="submit"]:hover {
 
 .nav-toggle { 
 	background-color: #272F38;
+	border-radius: 0;
 	color: #999;
 	display: none; 
+	font-size: inherit;
 	padding: 20px 0 23px;
 	text-align: center;
+	width: 100%;
 }
 	
 .nav-toggle:hover { 
+	background-color: #272F38;
+	color: #999;
 	cursor: pointer; 
 }
 
 .nav-toggle .bars,
-.nav-toggle p {
+.nav-toggle .nav-toggle-text {
 	display: inline-block;
 }
 
@@ -808,6 +814,7 @@ input[type="submit"]:hover {
 
 .nav-toggle .bar {
 	background-color: #767676;
+	display: block;
 	border-radius: 2px;
 	height: 2px;
 	position: absolute;
@@ -819,7 +826,7 @@ input[type="submit"]:hover {
 .nav-toggle .bar:nth-child(2) { top: 4px; }
 .nav-toggle .bar:nth-child(3) { top: 8px; }
 
-.nav-toggle p {
+.nav-toggle .nav-toggle-text {
 	font-size: 13px;
 	font-weight: 700;
 	letter-spacing: 1px;

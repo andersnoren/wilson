@@ -3,13 +3,14 @@ jQuery(document).ready(function($) {
 	// Toggle mobile-menu
 	$(".nav-toggle").on("click", function(){	
 		$(this).toggleClass("active");
+		$(this).attr("aria-expanded", $(this).hasClass("active") ? "true" : "false");
 		$(".mobile-menu").slideToggle();
 	});
 		
 	// Show mobile-menu > 800
-	$(window).resize(function() {
+	$(window).on("resize", function() {
 		if ($(window).width() > 800) {
-			$(".toggle").removeClass("active");
+			$(".toggle").removeClass("active").attr("aria-expanded", "false");
 			$(".mobile-menu").hide();
 		}
 	});
@@ -37,14 +38,14 @@ jQuery(document).ready(function($) {
 
 	resizeVideo(vidSelector);
 
-	$(window).resize(function() {
+	$(window).on("resize", function() {
 		resizeVideo(vidSelector);
 	});
 	
 	// Smooth scroll to header
-    $('.tothetop').click(function(){
+    $('.tothetop').on("click", function(){
 		$('html,body').animate({scrollTop: 0}, 500);
-		$(this).unbind("mouseenter mouseleave");
+		$(this).off("mouseenter mouseleave");
         return false;
     });
 	

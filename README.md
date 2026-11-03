@@ -20,9 +20,9 @@ Do you want to support the continued development of Wilson? You can send me a Pa
 
 ## Requirements
 - WordPress 4.5+
-- PHP 5.4+
+- PHP 5.6+
 - License: [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html) or later
 
 ## Resources
 - [About Wilson](https://andersnoren.se/teman/wilson-wordpress-theme/)
-- [Wilson demo site](https://andersnoren.se/themes/wilson/)
+- [Wilson demo site](https://wilson.andersnoren.se)

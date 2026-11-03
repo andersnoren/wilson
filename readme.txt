@@ -2,10 +2,18 @@
 Contributors: Anlino
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Requires at least: 4.5
-Tested up to: 6.1
+Tested up to: 7.1
+Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+A clean, simple and responsive theme for personal sites and blogs.
+
+
+== Description ==
+
+Wilson is a clean, simple and responsive theme for personal sites and blogs. It features responsive design, retina-ready assets, Block Editor support, custom accent color support, custom logo support, page templates, and editor styles. Demo: https://wilson.andersnoren.se
 
 
 == Installation ==
@@ -14,6 +22,12 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 2. Activate the theme
 
 All theme specific options are handled through the WordPress Customizer.
+
+
+== Copyright ==
+
+Wilson WordPress Theme, Copyright 2014-2026 Anders Norén
+Wilson is distributed under the terms of the GNU GPL.
 
 
 == Licenses ==
@@ -30,12 +44,31 @@ Raleway
 License: SIL Open Font License, 1.1 
 Source: https://fonts.google.com/specimen/Raleway
 
-screenshot.png post image 
+screenshot.jpg post image 
 License: CC0 Public Domain 
-Source: http://www.unsplash.com
+Source: Unsplash (added before the 2017 change to the Unsplash license, when its photos were released under CC0)
+
+
+== Frequently Asked Questions ==
+
+= Where can I get support? =
+Post your question in the Wilson support forum on WordPress.org: https://wordpress.org/support/theme/wilson/
+
+= Where can I request a feature or report a bug? =
+Open an issue in the Wilson GitHub repository: https://github.com/andersnoren/wilson
 
 
 == Changelog ==
+
+Version 2.1.4 (2026-11-03)
+-------------------------
+- Tested with WordPress 7.1.
+- Made the mobile menu toggle a button, so it can be reached and used with a keyboard.
+- Replaced deprecated jQuery methods (.resize(), .click() and .unbind()) with .on() and .off().
+- Fixed the block editor styles not loading in the iframed editor.
+- Updated the demo URL.
+- Added the Requires at least header to style.css and the Requires PHP header to readme.txt.
+- Added Description, FAQ, Copyright and Upgrade Notice sections to the readme, and updated the image source notes.
 
 Version 2.1.3 (2023-03-03)
 -------------------------
@@ -306,3 +339,9 @@ Version 1.01 (2014-02-12)
 
 Version 1 (2014-02-12)
 -------------------------
+
+
+== Upgrade Notice ==
+
+= 2.1.4 =
+Tested with WordPress 7.1. Makes the mobile menu toggle keyboard accessible, and fixes the block editor styles in the iframed editor.
